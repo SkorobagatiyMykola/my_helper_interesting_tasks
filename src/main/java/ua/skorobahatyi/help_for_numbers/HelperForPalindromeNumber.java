@@ -1,4 +1,4 @@
-package ua.skorobahatyi.my_help_for_numbers;
+package ua.skorobahatyi.help_for_numbers;
 
 public class HelperForPalindromeNumber {
 
