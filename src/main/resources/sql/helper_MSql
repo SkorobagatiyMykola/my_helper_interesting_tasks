@@ -1,0 +1,23 @@
+=========================================
+Hot keys:
+1. Ctrl+Enter  			=> Execute Current Statement
+2. Ctrl+Shift+Enter		=> Execute (All or Selection)
+
+
+=========================================
+https://dbfiddle.uk/WO2oN3bL
+
+
+=========================================
+(!!!) regular-expression
+https://www.mysqltutorial.org/mysql-regular-expression-regexp.aspx
+Ex. => SELECT distinct (CITY) FROM STATION WHERE REGEXP_LIKE(CITY, '^[a,e,i,o,u].+[a,e,i,o,u]$');
+1. ^ 	 =>  matches the position at the beginning of the searched string
+2. $ 	 =>  matches the position at the end of the searched string
+3. .     =>  matches any single character
+4. []    =>  matches any character specified inside the square brackets
+5. [^]   =>  matches any character not specified inside the square brackets
+6. *	 =>  matches the preceding character zero or more times
+7. +     =>  matches preceding character one or more times
+...
+=========================================
