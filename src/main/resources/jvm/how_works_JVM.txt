@@ -1,0 +1,43 @@
+=============================================
+https://www.youtube.com/watch?v=mRjC0RaOk4A&list=PLlb7e2G7aSpTCB2OxGlezpgOXwq4xer7Z&index=51
+stopped for = 3:45
+=============================================
+1. Class Loader Subsystem
+	1.1. Loading
+		- Bootstrap Class Loader
+		- Extension Class Loader
+		- Application Class Loader
+	1.2. Linking
+		- Verify
+		- Prepare
+		- Resolve
+	1.3. Initialization
+		- Initialization
+=============================================
+2. Runtime Data Area
+	2.1. Method Area
+	2.2. Heap
+	2.3. Stack
+		- Thread # 1
+		- Thread # 2
+		- Thread # 3 et.
+	2.4. PC Register
+		- Thread # 1 PC
+		- Thread # 2 PC
+		- Thread # 3 PC et.
+	2.5. Native Method Stack
+=============================================
+3. Execution Engine
+	3.1. Interpreter
+	3.2. JIT Compiler
+	3.3. Garbage Collector
+(!) Native Method
+(!) Native Method Library
+=============================================
+=============================================
+
+
+//
+
+http://localhost:8081/users/download?format=csv
+http://localhost:8081/users/download?format=excel
