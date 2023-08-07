@@ -1,4 +1,4 @@
-package ua.skorobahatyi.primary_numbers;
+package ua.skorobahatyi.my_help_for_numbers;
 
 import java.util.ArrayList;
 import java.util.List;

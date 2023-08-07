@@ -1,4 +1,4 @@
-package ua.skorobahatyi.primary_numbers;
+package ua.skorobahatyi.my_help_for_numbers;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
