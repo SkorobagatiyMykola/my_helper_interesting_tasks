@@ -2,9 +2,9 @@ package ua.skorobahatyi.games.bulls_and_cows;
 
 import java.util.*;
 
-import static ua.skorobahatyi.my_games.Color.*;
+import static ua.skorobahatyi.games.bulls_and_cows.Color.*;
 
-public class Bulls_andCows {
+public class Bulls_and_Cows {
     public static void main(String[] args) {
 
         String target = generateTask();
