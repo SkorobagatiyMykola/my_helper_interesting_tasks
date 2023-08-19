@@ -16,4 +16,6 @@ public class HelperForPalindromeNumber {
         return temp == sum ? true : false;
     }
 
+
+
 }
