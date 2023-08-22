@@ -6,6 +6,8 @@ import java.util.Set;
 public class HappyNumber {
     public static void main(String[] args) {
 
+
+
 //        System.out.println(sumSquareDigit(553));
         System.out.println(isHappy(553));
         System.out.println(isHappy(19));
@@ -46,13 +48,3 @@ public class HappyNumber {
         return sum;
     }
 }
-
-
-/*
-*
-*  while (number > 0) {
-            r = (int) (number % 10);
-            sum = (sum * 10) + r;
-            number = number / 10;
-        }
-* */
