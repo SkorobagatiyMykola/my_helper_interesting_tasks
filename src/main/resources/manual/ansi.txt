@@ -1,4 +1,6 @@
 Helper sites:
+ASCII (American Standard Code for Information Interchange) is a 7-bit character set that contains characters from 0 to 127.
+
 ==========================================
 https://www.gaijin.at/en/infos/ascii-ansi-character-table
 https://www.ascii-code.com/
@@ -36,3 +38,12 @@ https://www.ascii-code.com/
 29		61	=	93	]	125	}
 30		62	>	94	^	126	~
 31		63	?	95	_	127	
+
+Character code	Type	Available in character set
+                                       ASCII        Windows-1252	ISO-8859-1
+0 - 31	    Control characters	        YES             YES	            YES
+32 - 126	Printable characters	    YES	            YES	            YES
+127	        Control characters	        YES	            YES	            YES
+128 - 159	Printable characters	    NO	            YES	            NO
+                                                                (only as control characters)
+160 - 255	Printable characters	    NO	            YES	            YES
