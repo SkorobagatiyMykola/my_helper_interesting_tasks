@@ -26,3 +26,7 @@ SELECT tab.product_id, cast(SUM(tab.all_price)/SUM(tab.units) as decimal (10,2))
                 LEFT JOIN UnitsSold u on p.product_id=u.product_id
                  and (u.purchase_date>=p.start_date and u.purchase_date<=p.end_date)) as tab
    GROUP BY tab.product_id;
+--577. Employee Bonus
+--https://leetcode.com/problems/employee-bonus/description/?envType=study-plan-v2&envId=top-sql-50
+SELECT e.name name, b.bonus bonus FROM Employee e LEFT JOIN Bonus b on e.empId=b.empId
+        where ( b.bonus<1000 OR b.bonus IS NULL);
