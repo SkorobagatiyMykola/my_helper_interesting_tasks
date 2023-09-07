@@ -30,3 +30,6 @@ SELECT tab.product_id, cast(SUM(tab.all_price)/SUM(tab.units) as decimal (10,2))
 --https://leetcode.com/problems/employee-bonus/description/?envType=study-plan-v2&envId=top-sql-50
 SELECT e.name name, b.bonus bonus FROM Employee e LEFT JOIN Bonus b on e.empId=b.empId
         where ( b.bonus<1000 OR b.bonus IS NULL);
+--620. Not Boring Movies
+--https://leetcode.com/problems/not-boring-movies/description/?envType=study-plan-v2&envId=top-sql-50
+SELECT id, movie, description, rating FROM Cinema WHERE MOD (id,2)=1 AND description !='boring' ORDER BY rating DESC;
