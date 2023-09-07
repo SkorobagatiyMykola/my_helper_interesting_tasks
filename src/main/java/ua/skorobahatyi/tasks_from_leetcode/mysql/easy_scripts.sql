@@ -18,4 +18,11 @@ SELECT p.email Email FROM Person p GROUP BY p.email HAVING count(p.email)>=2;
 SELECT c.name Customers FROM Customers c LEFT JOIN Orders o ON c.id=o.customerId WHERE o.customerId IS NULL;
 --1729. Find Followers Count
 --https://leetcode.com/problems/find-followers-count/?envType=study-plan-v2&envId=top-sql-50
-SELECT f.user_id user_id, count(f.follower_id) followers_count FROM Followers f GROUP BY f.user_id;
+SELECT f.user_id user_id, count(f.follower_id) followers_count FROM Followers f GROUP BY f.user_id ORDER BY f.user_id;
+--1251. Average Selling Price
+--https://leetcode.com/problems/average-selling-price/?envType=study-plan-v2&envId=top-sql-50
+SELECT tab.product_id, cast(SUM(tab.all_price)/SUM(tab.units) as decimal (10,2))average_price FROM
+      (SELECT p.product_id product_id,  p.price*u.units all_price, u.units units FROM Prices p
+                LEFT JOIN UnitsSold u on p.product_id=u.product_id
+                 and (u.purchase_date>=p.start_date and u.purchase_date<=p.end_date)) as tab
+   GROUP BY tab.product_id;
