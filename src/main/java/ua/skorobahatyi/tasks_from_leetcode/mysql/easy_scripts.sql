@@ -41,5 +41,9 @@ SELECT tabl1.student_id, tabl1.student_name, tabl1.subject_name, IFNULL(tabl2.at
             (SELECT ex.student_id, ex.subject_name, count(*) attents  FROM Examinations ex
                  GROUP BY ex.student_id, ex.subject_name) tabl2
         on tabl1.student_id=tabl2.student_id and tabl1.subject_name=tabl2.subject_name
-
     ORDER BY tabl1.student_id, tabl1.subject_name;
+--570. Managers with at Least 5 Direct Reports
+--https://leetcode.com/problems/managers-with-at-least-5-direct-reports/description/?envType=study-plan-v2&envId=top-sql-50
+SELECT e.name FROM Employee e INNER JOIN
+        (SELECT e.managerId id, count(*) cnt FROM Employee e GROUP BY e.managerId HAVING count(*)>=5) grp
+    ON e.id = grp.id;
