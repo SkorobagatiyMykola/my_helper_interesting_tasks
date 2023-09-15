@@ -47,3 +47,7 @@ SELECT tabl1.student_id, tabl1.student_name, tabl1.subject_name, IFNULL(tabl2.at
 SELECT e.name FROM Employee e INNER JOIN
         (SELECT e.managerId id, count(*) cnt FROM Employee e GROUP BY e.managerId HAVING count(*)>=5) grp
     ON e.id = grp.id;
+--1075. Project Employees I
+--https://leetcode.com/problems/project-employees-i/?envType=study-plan-v2&envId=top-sql-50
+SELECT p.project_id project_id, cast( avg(e.experience_years) as decimal (10,2)) average_years FROM Project p
+            LEFT JOIN Employee e ON p.employee_id=e.employee_id GROUP BY p.project_id;
