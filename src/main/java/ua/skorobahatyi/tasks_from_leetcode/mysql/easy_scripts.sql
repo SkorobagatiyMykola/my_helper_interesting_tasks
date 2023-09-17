@@ -51,3 +51,6 @@ SELECT e.name FROM Employee e INNER JOIN
 --https://leetcode.com/problems/project-employees-i/?envType=study-plan-v2&envId=top-sql-50
 SELECT p.project_id project_id, cast( avg(e.experience_years) as decimal (10,2)) average_years FROM Project p
             LEFT JOIN Employee e ON p.employee_id=e.employee_id GROUP BY p.project_id;
+--1068. Product Sales Analysis I
+--https://leetcode.com/problems/product-sales-analysis-i/description/?envType=study-plan-v2&envId=top-sql-50
+SELECT p.product_name product_name, s.year, s.price FROM Sales s LEFT JOIN Product p ON s.product_id=p.product_id;
