@@ -33,6 +33,7 @@ SELECT e.name name, b.bonus bonus FROM Employee e LEFT JOIN Bonus b on e.empId=b
 --620. Not Boring Movies
 --https://leetcode.com/problems/not-boring-movies/description/?envType=study-plan-v2&envId=top-sql-50
 SELECT id, movie, description, rating FROM Cinema WHERE MOD (id,2)=1 AND description !='boring' ORDER BY rating DESC;
+
 --1280. Students and Examinations
 --https://leetcode.com/problems/students-and-examinations/
 SELECT tabl1.student_id, tabl1.student_name, tabl1.subject_name, IFNULL(tabl2.attents,0) attended_exams FROM
