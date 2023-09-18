@@ -55,3 +55,7 @@ SELECT p.project_id project_id, cast( avg(e.experience_years) as decimal (10,2))
 --1068. Product Sales Analysis I
 --https://leetcode.com/problems/product-sales-analysis-i/description/?envType=study-plan-v2&envId=top-sql-50
 SELECT p.product_name product_name, s.year, s.price FROM Sales s LEFT JOIN Product p ON s.product_id=p.product_id;
+--1661. Average Time of Process per Machine
+--https://leetcode.com/problems/average-time-of-process-per-machine/description/?envType=study-plan-v2&envId=top-sql-50
+SELECT a.machine_id, cast( 2*avg(a.time1) as decimal (10,3)) processing_time
+        FROM (SELECT  machine_id, IF(activity_type='end',timestamp,-timestamp) time1 FROM Activity) a GROUP BY machine_id;
