@@ -59,3 +59,10 @@ SELECT p.product_name product_name, s.year, s.price FROM Sales s LEFT JOIN Produ
 --https://leetcode.com/problems/average-time-of-process-per-machine/description/?envType=study-plan-v2&envId=top-sql-50
 SELECT a.machine_id, cast( 2*avg(a.time1) as decimal (10,3)) processing_time
         FROM (SELECT  machine_id, IF(activity_type='end',timestamp,-timestamp) time1 FROM Activity) a GROUP BY machine_id;
+--1327. List the Products Ordered in a Period
+--https://leetcode.com/problems/list-the-products-ordered-in-a-period/description/?envType=study-plan-v2&envId=top-sql-50
+SELECT p.product_name, sum(unit) unit FROM Orders o LEFT JOIN Products p ON o.product_id=p.product_id
+        WHERE o.order_date BETWEEN '2020-02-01' AND  '2020-02-29' GROUP BY o.product_id HAVING sum(unit)>=100;
+--1667. Fix Names in a Table
+--https://leetcode.com/problems/fix-names-in-a-table/description/?envType=study-plan-v2&envId=top-sql-50
+SELECT user_id, CONCAT(UPPER(SUBSTRING(name,1,1)),LOWER(SUBSTRING(name,2))) name  FROM Users ORDER BY user_id;
