@@ -72,3 +72,8 @@ SELECT employee_id FROM Employees WHERE salary<30000 AND manager_id NOT IN (SELE
 --610. Triangle Judgement
 --https://leetcode.com/problems/triangle-judgement/description/?envType=study-plan-v2&envId=top-sql-50
 SELECT x,y,z, IF ((x+y>z AND x+z>y AND y+z>x),'Yes','No') triangle FROM Triangle;
+--1731. The Number of Employees Which Report to Each Employee
+--https://leetcode.com/problems/the-number-of-employees-which-report-to-each-employee/description/?envType=study-plan-v2&envId=top-sql-50
+SELECT e.employee_id, e.name, e2.count2 reports_count, CAST(e2.age2 AS SIGNED )average_age
+    FROM Employees e RIGHT JOIN (SELECT e.reports_to reports_to, count(*) count2, avg(e.age) age2 FROM Employees e GROUP BY e.reports_to) e2 ON e.employee_id=e2.reports_to
+    WHERE e.employee_id IS NOT NULL ORDER BY e.employee_id;
