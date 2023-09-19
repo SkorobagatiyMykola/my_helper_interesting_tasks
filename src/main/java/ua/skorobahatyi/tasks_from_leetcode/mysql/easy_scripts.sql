@@ -83,3 +83,9 @@ SELECT max(num) num FROM MyNumbers WHERE num in (SELECT num FROM MyNumbers GROUP
 --1581. Customer Who Visited but Did Not Make Any Transactions
 --https://leetcode.com/problems/customer-who-visited-but-did-not-make-any-transactions/description/?envType=study-plan-v2&envId=top-sql-50
 SELECT v.customer_id, count(*) count_no_trans  FROM Visits v LEFT JOIN Transactions t ON v.visit_id=t.visit_id where t.visit_id is NULL GROUP BY v.customer_id;
+--197. Rising Temperature
+--https://leetcode.com/problems/rising-temperature/description/?envType=study-plan-v2&envId=top-sql-50
+SELECT w.id FROM Weather w LEFT JOIN
+  (SELECT DATE_ADD(recordDate, Interval 1 DAY) recordDate, temperature FROM Weather) w2
+    ON w.recordDate=w2.recordDate
+        WHERE w2.recordDate IS NOT NULL AND w.temperature>w2.temperature;
