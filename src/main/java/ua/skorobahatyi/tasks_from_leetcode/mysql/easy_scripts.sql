@@ -77,3 +77,6 @@ SELECT x,y,z, IF ((x+y>z AND x+z>y AND y+z>x),'Yes','No') triangle FROM Triangle
 SELECT e.employee_id, e.name, e2.count2 reports_count, CAST(e2.age2 AS SIGNED )average_age
     FROM Employees e RIGHT JOIN (SELECT e.reports_to reports_to, count(*) count2, avg(e.age) age2 FROM Employees e GROUP BY e.reports_to) e2 ON e.employee_id=e2.reports_to
     WHERE e.employee_id IS NOT NULL ORDER BY e.employee_id;
+--619. Biggest Single Number
+--https://leetcode.com/problems/biggest-single-number/description/?envType=study-plan-v2&envId=top-sql-50
+SELECT max(num) num FROM MyNumbers WHERE num in (SELECT num FROM MyNumbers GROUP BY num HAVING count(*)=1)
