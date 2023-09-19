@@ -89,3 +89,11 @@ SELECT w.id FROM Weather w LEFT JOIN
   (SELECT DATE_ADD(recordDate, Interval 1 DAY) recordDate, temperature FROM Weather) w2
     ON w.recordDate=w2.recordDate
         WHERE w2.recordDate IS NOT NULL AND w.temperature>w2.temperature;
+--1211. Queries Quality and Percentage
+--https://leetcode.com/problems/queries-quality-and-percentage/description/?envType=study-plan-v2&envId=top-sql-50
+SELECT tab1.query_name query_name, tab1.quality quality, cast( IFNULL(100*count2/count1,0) as decimal(10,2)) poor_query_percentage FROM
+ (SELECT query_name, cast(avg(rating/position) as decimal(10,2)) quality, count(*)  count1
+ FROM Queries q GROUP BY query_name) tab1
+  LEFT JOIN
+      (SELECT query_name, count(*)  count2 FROM Queries q WHERE rating<3 GROUP BY query_name ) tab2
+  ON tab1.query_name=tab2.query_name;
