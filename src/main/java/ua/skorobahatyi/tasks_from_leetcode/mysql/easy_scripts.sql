@@ -66,3 +66,6 @@ SELECT p.product_name, sum(unit) unit FROM Orders o LEFT JOIN Products p ON o.pr
 --1667. Fix Names in a Table
 --https://leetcode.com/problems/fix-names-in-a-table/description/?envType=study-plan-v2&envId=top-sql-50
 SELECT user_id, CONCAT(UPPER(SUBSTRING(name,1,1)),LOWER(SUBSTRING(name,2))) name  FROM Users ORDER BY user_id;
+--1978. Employees Whose Manager Left the Company
+--https://leetcode.com/problems/employees-whose-manager-left-the-company/description/?envType=study-plan-v2&envId=top-sql-50
+SELECT employee_id FROM Employees WHERE salary<30000 AND manager_id NOT IN (SELECT employee_id FROM Employees)  ORDER BY employee_id;
