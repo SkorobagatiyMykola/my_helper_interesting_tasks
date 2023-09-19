@@ -69,3 +69,6 @@ SELECT user_id, CONCAT(UPPER(SUBSTRING(name,1,1)),LOWER(SUBSTRING(name,2))) name
 --1978. Employees Whose Manager Left the Company
 --https://leetcode.com/problems/employees-whose-manager-left-the-company/description/?envType=study-plan-v2&envId=top-sql-50
 SELECT employee_id FROM Employees WHERE salary<30000 AND manager_id NOT IN (SELECT employee_id FROM Employees)  ORDER BY employee_id;
+--610. Triangle Judgement
+--https://leetcode.com/problems/triangle-judgement/description/?envType=study-plan-v2&envId=top-sql-50
+SELECT x,y,z, IF ((x+y>z AND x+z>y AND y+z>x),'Yes','No') triangle FROM Triangle;
