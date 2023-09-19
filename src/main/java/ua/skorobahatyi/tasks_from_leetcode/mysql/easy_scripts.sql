@@ -80,3 +80,6 @@ SELECT e.employee_id, e.name, e2.count2 reports_count, CAST(e2.age2 AS SIGNED )a
 --619. Biggest Single Number
 --https://leetcode.com/problems/biggest-single-number/description/?envType=study-plan-v2&envId=top-sql-50
 SELECT max(num) num FROM MyNumbers WHERE num in (SELECT num FROM MyNumbers GROUP BY num HAVING count(*)=1)
+--1581. Customer Who Visited but Did Not Make Any Transactions
+--https://leetcode.com/problems/customer-who-visited-but-did-not-make-any-transactions/description/?envType=study-plan-v2&envId=top-sql-50
+SELECT v.customer_id, count(*) count_no_trans  FROM Visits v LEFT JOIN Transactions t ON v.visit_id=t.visit_id where t.visit_id is NULL GROUP BY v.customer_id;
