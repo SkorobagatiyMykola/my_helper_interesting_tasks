@@ -97,3 +97,6 @@ SELECT tab1.query_name query_name, tab1.quality quality, cast( IFNULL(100*count2
   LEFT JOIN
       (SELECT query_name, count(*)  count2 FROM Queries q WHERE rating<3 GROUP BY query_name ) tab2
   ON tab1.query_name=tab2.query_name;
+--196. Delete Duplicate Emails
+--https://leetcode.com/problems/delete-duplicate-emails/description/?envType=study-plan-v2&envId=top-sql-50
+DELETE p1 FROM Person p1 INNER JOIN Person p2 WHERE p1.id>p2.id AND p1.email=p2.email;
