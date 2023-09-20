@@ -100,3 +100,7 @@ SELECT tab1.query_name query_name, tab1.quality quality, cast( IFNULL(100*count2
 --196. Delete Duplicate Emails
 --https://leetcode.com/problems/delete-duplicate-emails/description/?envType=study-plan-v2&envId=top-sql-50
 DELETE p1 FROM Person p1 INNER JOIN Person p2 WHERE p1.id>p2.id AND p1.email=p2.email;
+--1789. Primary Department for Each Employee
+--https://leetcode.com/problems/primary-department-for-each-employee/description/?envType=study-plan-v2&envId=top-sql-50
+SELECT employee_id, department_id FROM Employee WHERE primary_flag='Y'
+        OR employee_id IN (SELECT employee_id FROM Employee GROUP BY employee_id HAVING count(*)=1)
