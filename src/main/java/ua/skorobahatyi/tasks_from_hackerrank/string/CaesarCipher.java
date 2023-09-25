@@ -8,9 +8,21 @@ package ua.skorobahatyi.tasks_from_hackerrank.string;
  * Alphabet rotated +3:    defghijklmnopqrstuvwxyzabc
  */
 public class CaesarCipher {
+    private final static int upperCaseInd = 65;
+    private final static int lowCaseInd = 97;
+    private final static int countSymbols = 26;
+
     public static void main(String[] args) {
         System.out.println(caesarCipher("abcdefghijklmnopqrstuvwxyz", 3));
-        System.out.println(caesarCipher("abcdefghijklmnopqrstuvwxyz", 3));
+        System.out.println(caesarCipher("middle-Outz", 3));
+        System.out.println(caesarCipher("DNFjxo?b5h*5<LWbgs6?V5{3M].1hG)pv1VWq4(!][DZ3G)riSJ.CmUj9]7Gzl?VyeJ2dIPEW4GYW*scT8(vhu9wCr]q!7eyaoy.", 45));
+
+
+        // My helper Problems was in the bounds. I solved it.
+//        char c1 = '{';
+//        char c2 = '[';
+//        System.out.println(c1 + " = " + (int) c1);
+//        System.out.println(c2 + " = " + (int) c2);
 
     }
 
@@ -18,9 +30,21 @@ public class CaesarCipher {
 
         String result = "";
 
-//        for (int i = 0; i < s.length(); i++) {
-//            result += new Character((int) s.charAt(i) + k));
-//        }
+        for (int i = 0; i < s.length(); i++) {
+            int num = s.charAt(i);
+            if (num >= upperCaseInd && num < upperCaseInd + countSymbols) {
+                num = ((num - upperCaseInd) + k) % 26;
+                char ch = (char) (upperCaseInd + num);
+                result += ch;
+            } else if (num >= lowCaseInd && num < lowCaseInd + countSymbols) {
+                num = ((num - lowCaseInd) + k) % 26;
+                char ch = (char) (lowCaseInd + num);
+                result += ch;
+            } else {
+                char ch = (char) (s.charAt(i));
+                result += ch;
+            }
+        }
 
         return result;
     }
