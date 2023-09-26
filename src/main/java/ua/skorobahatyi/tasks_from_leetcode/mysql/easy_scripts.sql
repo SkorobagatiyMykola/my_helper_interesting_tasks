@@ -104,3 +104,6 @@ DELETE p1 FROM Person p1 INNER JOIN Person p2 WHERE p1.id>p2.id AND p1.email=p2.
 --https://leetcode.com/problems/primary-department-for-each-employee/description/?envType=study-plan-v2&envId=top-sql-50
 SELECT employee_id, department_id FROM Employee WHERE primary_flag='Y'
         OR employee_id IN (SELECT employee_id FROM Employee GROUP BY employee_id HAVING count(*)=1)
+--1517. Find Users With Valid E-Mails
+--https://leetcode.com/problems/find-users-with-valid-e-mails/description/?envType=study-plan-v2&envId=top-sql-50
+SELECT * FROM Users u WHERE REGEXP_LIKE(mail,'^[a-zA-Z]{1}[a-zA-Z0-9-._]*@leetcode\\.com$')
