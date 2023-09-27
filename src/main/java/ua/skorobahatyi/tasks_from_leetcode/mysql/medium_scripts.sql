@@ -25,3 +25,6 @@ SELECT tab1.product_id, IFNULL(tab3.new_price, 10) price FROM (SELECT product_id
  ON tab1.product_id=tab2.product_id
  LEFT JOIN Products tab3
  ON tab1.product_id=tab3.product_id AND tab2.change_date=tab3.change_date
+--176. Second Highest Salary
+--https://leetcode.com/problems/second-highest-salary/description/?envType=study-plan-v2&envId=top-sql-50
+SELECT max(salary) SecondHighestSalary FROM  (SELECT distinct salary FROM Employee ORDER BY salary DESC LIMIT 1 OFFSET 1) tab LIMIT 1
