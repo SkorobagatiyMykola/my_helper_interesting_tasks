@@ -13,3 +13,8 @@ SELECT sig.user_id user_id, ROUND(IFNULL(com2.count/com1.count,0), 2) confirmati
  (SELECT user_id, count(*) count FROM Confirmations GROUP BY user_id) com1 ON sig.user_id=com1.user_id
         LEFT JOIN (SELECT user_id, count(*) count FROM  Confirmations WHERE action='confirmed' GROUP BY user_id) com2
 ON sig.user_id=com2.user_id
+--602. Friend Requests II: Who Has the Most Friends
+--https://leetcode.com/problems/friend-requests-ii-who-has-the-most-friends/description/?envType=study-plan-v2&envId=top-sql-50
+SELECT id, num FROM (SELECT fr1 id, count(distinct fr2) num FROM
+(SELECT requester_id fr1, accepter_id fr2 FROM RequestAccepted UNION SELECT accepter_id fr1, requester_id fr2  FROM RequestAccepted) tab1
+GROUP BY fr1 ) tab2 ORDER BY num DESC LIMIT 1
