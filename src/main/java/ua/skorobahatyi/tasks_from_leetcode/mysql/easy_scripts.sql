@@ -107,3 +107,7 @@ SELECT employee_id, department_id FROM Employee WHERE primary_flag='Y'
 --1517. Find Users With Valid E-Mails
 --https://leetcode.com/problems/find-users-with-valid-e-mails/description/?envType=study-plan-v2&envId=top-sql-50
 SELECT * FROM Users u WHERE REGEXP_LIKE(mail,'^[a-zA-Z]{1}[a-zA-Z0-9-._]*@leetcode\\.com$')
+--1484. Group Sold Products By The Date
+--https://leetcode.com/problems/group-sold-products-by-the-date/description/?envType=study-plan-v2&envId=top-sql-50
+SELECT sell_date, count(DISTINCT product) num_sold, group_concat(DISTINCT product) products FROM Activities GROUP BY sell_date
+                                       ORDER BY  sell_date, group_concat(DISTINCT product) ASC
