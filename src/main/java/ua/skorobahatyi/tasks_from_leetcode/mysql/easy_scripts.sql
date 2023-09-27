@@ -114,3 +114,6 @@ SELECT sell_date, count(DISTINCT product) num_sold, group_concat(DISTINCT produc
 --596. Classes More Than 5 Students
 --https://leetcode.com/problems/classes-more-than-5-students/description/?envType=study-plan-v2&envId=top-sql-50
 SELECT class FROM Courses GROUP BY class HAVING COUNT(*)>=5
+--1633. Percentage of Users Attended a Contest
+--https://leetcode.com/problems/percentage-of-users-attended-a-contest/description/?envType=study-plan-v2&envId=top-sql-50
+SELECT contest_id, ROUND(100*count(*)/(SELECT count(*) FROM Users),2) percentage FROM Register r GROUP BY contest_id ORDER BY percentage DESC, contest_id
