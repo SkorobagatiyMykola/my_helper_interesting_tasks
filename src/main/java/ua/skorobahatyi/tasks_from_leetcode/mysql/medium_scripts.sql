@@ -28,3 +28,10 @@ SELECT tab1.product_id, IFNULL(tab3.new_price, 10) price FROM (SELECT product_id
 --176. Second Highest Salary
 --https://leetcode.com/problems/second-highest-salary/description/?envType=study-plan-v2&envId=top-sql-50
 SELECT max(salary) SecondHighestSalary FROM  (SELECT distinct salary FROM Employee ORDER BY salary DESC LIMIT 1 OFFSET 1) tab LIMIT 1
+--1193. Monthly Transactions I
+--https://leetcode.com/problems/monthly-transactions-i/description/?envType=study-plan-v2&envId=top-sql-50
+SELECT T1.month, T1.country, T1.trans_count, IFNULL(T2.approved_count,0) approved_count,
+                      T1.trans_total_amount, IFNULL(T2.approved_total_amount,0) approved_total_amount FROM
+(SELECT month, country, count(*) trans_count, sum(amount) trans_total_amount FROM (SELECT DATE_FORMAT(trans_date,"%Y-%m") month, country, state, amount FROM Transactions) tab1 GROUP BY month, country) T1 LEFT JOIN
+(SELECT month, country, count(*) approved_count, sum(amount) approved_total_amount FROM (SELECT DATE_FORMAT(trans_date,"%Y-%m") month, country, state, amount FROM Transactions WHERE state='approved') tab2 GROUP BY month, country) T2
+ON T1.month=T2.month and T1.country=T2.country
