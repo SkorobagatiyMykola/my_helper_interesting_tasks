@@ -111,3 +111,6 @@ SELECT * FROM Users u WHERE REGEXP_LIKE(mail,'^[a-zA-Z]{1}[a-zA-Z0-9-._]*@leetco
 --https://leetcode.com/problems/group-sold-products-by-the-date/description/?envType=study-plan-v2&envId=top-sql-50
 SELECT sell_date, count(DISTINCT product) num_sold, group_concat(DISTINCT product) products FROM Activities GROUP BY sell_date
                                        ORDER BY  sell_date, group_concat(DISTINCT product) ASC
+--596. Classes More Than 5 Students
+--https://leetcode.com/problems/classes-more-than-5-students/description/?envType=study-plan-v2&envId=top-sql-50
+SELECT class FROM Courses GROUP BY class HAVING COUNT(*)>=5
