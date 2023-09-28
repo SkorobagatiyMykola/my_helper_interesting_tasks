@@ -35,3 +35,6 @@ SELECT T1.month, T1.country, T1.trans_count, IFNULL(T2.approved_count,0) approve
 (SELECT month, country, count(*) trans_count, sum(amount) trans_total_amount FROM (SELECT DATE_FORMAT(trans_date,"%Y-%m") month, country, state, amount FROM Transactions) tab1 GROUP BY month, country) T1 LEFT JOIN
 (SELECT month, country, count(*) approved_count, sum(amount) approved_total_amount FROM (SELECT DATE_FORMAT(trans_date,"%Y-%m") month, country, state, amount FROM Transactions WHERE state='approved') tab2 GROUP BY month, country) T2
 ON T1.month=T2.month and T1.country=T2.country
+--1174. Immediate Food Delivery II
+--https://leetcode.com/problems/immediate-food-delivery-ii/description/?envType=study-plan-v2&envId=top-sql-50
+SELECT ROUND (100*(SELECT count(*) FROM (SELECT customer_id, min(order_date) ord1, min(customer_pref_delivery_date) del2 FROM Delivery GROUP BY customer_id HAVING ord1=del2) tab2)/count(*),2) immediate_percentage  FROM (SELECT customer_id, min(order_date) ord1, min(customer_pref_delivery_date) del2 FROM Delivery GROUP BY customer_id) tab1
