@@ -1,0 +1,3 @@
+--185. Department Top Three Salaries
+--https://leetcode.com/problems/department-top-three-salaries/description/?envType=study-plan-v2&envId=top-sql-50
+SELECT dep.name Department, tab1.name Employee, tab1.salary Salary FROM (SELECT departmentId, name, salary FROM Employee e1 WHERE  salary IN ( SELECT TOP 3 salary FROM Employee GROUP BY departmentId, salary HAVING departmentId=e1.departmentId ORDER BY departmentId, salary DESC)) tab1 LEFT JOIN  Department dep ON tab1.departmentId = dep.id;
