@@ -38,3 +38,6 @@ ON T1.month=T2.month and T1.country=T2.country
 --1174. Immediate Food Delivery II
 --https://leetcode.com/problems/immediate-food-delivery-ii/description/?envType=study-plan-v2&envId=top-sql-50
 SELECT ROUND (100*(SELECT count(*) FROM (SELECT customer_id, min(order_date) ord1, min(customer_pref_delivery_date) del2 FROM Delivery GROUP BY customer_id HAVING ord1=del2) tab2)/count(*),2) immediate_percentage  FROM (SELECT customer_id, min(order_date) ord1, min(customer_pref_delivery_date) del2 FROM Delivery GROUP BY customer_id) tab1
+--550. Game Play Analysis IV
+--https://leetcode.com/problems/game-play-analysis-iv/description/?envType=study-plan-v2&envId=top-sql-50
+ SELECT ROUND((SELECT count(*) FROM Activity tab1 RIGHT JOIN  (SELECT player_id, DATE_ADD(min(event_date),INTERVAL 1 DAY) next FROM Activity GROUP BY player_id) tab2  ON tab1.player_id= tab2.player_id WHERE tab1.event_date=tab2.next)/ (SELECT count(distinct player_id) FROM Activity),2) fraction FROM Activity LIMIT 1
