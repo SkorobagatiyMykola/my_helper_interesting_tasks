@@ -47,3 +47,11 @@ SELECT ROUND (100*(SELECT count(*) FROM (SELECT customer_id, min(order_date) ord
 (SELECT id, num FROM Logs) l1
 INNER JOIN (SELECT (id-1) id2, num FROM Logs) l2 ON l1.id=l2.id2 and l1.num=l2.num
 INNER JOIN (SELECT (id-2) id3, num FROM Logs) l3 ON l1.id=l3.id3 and l1.num=l3.num
+--1907. Count Salary Categories
+--https://leetcode.com/problems/count-salary-categories/description/?envType=study-plan-v2&envId=top-sql-50
+SELECT tab1.category, IFNULL(tab2.accounts_count,0) accounts_count FROM (SELECT IF(1>0,'Low Salary','') category FROM Accounts
+  UNION SELECT IF(1>0,'High Salary','') category FROM Accounts
+  UNION SELECT IF(1>0,'Average Salary','') category FROM Accounts) tab1
+  LEFT JOIN
+  (SELECT category, count(*) accounts_count FROM (SELECT IF(income<20000,'Low Salary', IF(income>50000,'High Salary','Average Salary')) category, income FROM  Accounts) t1 GROUP BY category) tab2
+  ON tab1.category=tab2.category
