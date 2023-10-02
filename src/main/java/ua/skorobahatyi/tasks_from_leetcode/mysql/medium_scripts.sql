@@ -41,3 +41,9 @@ SELECT ROUND (100*(SELECT count(*) FROM (SELECT customer_id, min(order_date) ord
 --550. Game Play Analysis IV
 --https://leetcode.com/problems/game-play-analysis-iv/description/?envType=study-plan-v2&envId=top-sql-50
  SELECT ROUND((SELECT count(*) FROM Activity tab1 RIGHT JOIN  (SELECT player_id, DATE_ADD(min(event_date),INTERVAL 1 DAY) next FROM Activity GROUP BY player_id) tab2  ON tab1.player_id= tab2.player_id WHERE tab1.event_date=tab2.next)/ (SELECT count(distinct player_id) FROM Activity),2) fraction FROM Activity LIMIT 1
+--180. Consecutive Numbers
+--https://leetcode.com/problems/consecutive-numbers/description/?envType=study-plan-v2&envId=top-sql-50
+ SELECT  distinct l1.num  ConsecutiveNums FROM
+(SELECT id, num FROM Logs) l1
+INNER JOIN (SELECT (id-1) id2, num FROM Logs) l2 ON l1.id=l2.id2 and l1.num=l2.num
+INNER JOIN (SELECT (id-2) id3, num FROM Logs) l3 ON l1.id=l3.id3 and l1.num=l3.num
