@@ -55,3 +55,12 @@ SELECT tab1.category, IFNULL(tab2.accounts_count,0) accounts_count FROM (SELECT 
   LEFT JOIN
   (SELECT category, count(*) accounts_count FROM (SELECT IF(income<20000,'Low Salary', IF(income>50000,'High Salary','Average Salary')) category, income FROM  Accounts) t1 GROUP BY category) tab2
   ON tab1.category=tab2.category
+--1341. Movie Rating
+--https://leetcode.com/problems/movie-rating/description/?envType=study-plan-v2&envId=top-sql-50
+(SELECT name results FROM Users u LEFT JOIN
+ (SELECT user_id, count(*) count_movies FROM MovieRating  GROUP BY user_id) tab1
+ ON u.user_id=tab1.user_id ORDER BY tab1.count_movies DESC, u.name limit 1)
+UNION ALL
+(SELECT title results FROM Movies m LEFT JOIN
+(SELECT movie_id, ROUND(avg(rating),2) rating FROM MovieRating WHERE DATE_FORMAT(created_at,'%Y-%m')='2020-02' GROUP BY movie_id) tab2
+ON m.movie_id=tab2.movie_id ORDER BY tab2.rating DESC, m.title limit 1)
