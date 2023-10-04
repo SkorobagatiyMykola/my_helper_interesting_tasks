@@ -64,3 +64,8 @@ UNION ALL
 (SELECT title results FROM Movies m LEFT JOIN
 (SELECT movie_id, ROUND(avg(rating),2) rating FROM MovieRating WHERE DATE_FORMAT(created_at,'%Y-%m')='2020-02' GROUP BY movie_id) tab2
 ON m.movie_id=tab2.movie_id ORDER BY tab2.rating DESC, m.title limit 1)
+--585. Investments in 2016
+--https://leetcode.com/problems/investments-in-2016/description/?envType=study-plan-v2&envId=top-sql-50
+SELECT ROUND(SUM(tab1.tiv_2016),2) tiv_2016  FROM (SELECT pid,tiv_2015, tiv_2016 , lat, lon FROM Insurance WHERE tiv_2015 in (SELECT  tiv_2015 FROM  Insurance GROUP BY tiv_2015 HAVING count(*)>1)) tab1 INNER JOIN
+(SELECT pid,tiv_2015, tiv_2016 , lat, lon, count(*) FROM Insurance GROUP BY lat, lon HAVING count(*)=1) tab2
+ON tab1.pid=tab2.pid
