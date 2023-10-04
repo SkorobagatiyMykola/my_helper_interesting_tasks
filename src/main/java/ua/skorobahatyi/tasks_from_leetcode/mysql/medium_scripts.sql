@@ -69,3 +69,6 @@ ON m.movie_id=tab2.movie_id ORDER BY tab2.rating DESC, m.title limit 1)
 SELECT ROUND(SUM(tab1.tiv_2016),2) tiv_2016  FROM (SELECT pid,tiv_2015, tiv_2016 , lat, lon FROM Insurance WHERE tiv_2015 in (SELECT  tiv_2015 FROM  Insurance GROUP BY tiv_2015 HAVING count(*)>1)) tab1 INNER JOIN
 (SELECT pid,tiv_2015, tiv_2016 , lat, lon, count(*) FROM Insurance GROUP BY lat, lon HAVING count(*)=1) tab2
 ON tab1.pid=tab2.pid
+--626. Exchange Seats
+--https://leetcode.com/problems/exchange-seats/description/?envType=study-plan-v2&envId=top-sql-50
+SELECT IF(id MOD 2=0,id-1,IF(id=(SELECT count(*) FROM Seat),id, id+1)) id, student FROM Seat ORDER BY id
