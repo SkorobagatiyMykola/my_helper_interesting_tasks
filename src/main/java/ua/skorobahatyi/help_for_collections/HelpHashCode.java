@@ -22,6 +22,7 @@ public class HelpHashCode {
         System.out.println(d1.hashCode());
 
         Long l1= 12356865181556554l;
+        Long l2= 12356865181556554l;
         System.out.println(l1.hashCode());
     }
 }
