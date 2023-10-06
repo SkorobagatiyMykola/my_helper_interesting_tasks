@@ -77,3 +77,6 @@ SELECT IF(id MOD 2=0,id-1,IF(id=(SELECT count(*) FROM Seat),id, id+1)) id, stude
 SELECT visited_on, (SELECT sum(amount) FROM Customer WHERE visited_on BETWEEN tab1.start_on AND tab1.visited_on ) amount,
       (SELECT ROUND(sum(amount)/7,2) FROM Customer WHERE visited_on BETWEEN tab1.start_on AND tab1.visited_on ) average_amount
     FROM(SELECT distinct visited_on, DATE_SUB(visited_on , INTERVAL 6 DAY) start_on FROM Customer WHERE DATE_SUB(visited_on , INTERVAL 6 DAY)>= (SELECT  min(c.visited_on) FROM Customer c)) tab1
+--1204. Last Person to Fit in the Bus
+--https://leetcode.com/problems/last-person-to-fit-in-the-bus/description/?envType=study-plan-v2&envId=top-sql-50
+SELECT person_name FROM (SELECT person_name, (SELECT sum(weight) FROM Queue WHERE turn BETWEEN 1 AND tab1.turn) sum_weight FROM (SELECT * FROM Queue ORDER BY turn) tab1) tab2 WHERE sum_weight<=1000 ORDER BY sum_weight DESC LIMIT 1
