@@ -11,3 +11,6 @@ FROM TRIANGLES;
 --Top Earners
 --https://www.hackerrank.com/challenges/earnings-of-employees/problem?isFullScreen=true
 SELECT (salary*months) s, count(*)  FROM Employee GROUP BY s HAVING s=(SELECT max(salary*months)  FROM Employee) ;
+--Population Census
+--https://www.hackerrank.com/challenges/asian-population/problem?isFullScreen=true
+SELECT SUM(CITY.POPULATION) FROM City INNER JOIN Country ON City.Countrycode=Country.Code AND Country.Continent='Asia'
