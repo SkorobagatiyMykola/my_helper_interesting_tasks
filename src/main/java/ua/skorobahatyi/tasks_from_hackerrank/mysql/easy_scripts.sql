@@ -8,3 +8,6 @@ SELECT
         ELSE 'Scalene'
     END
 FROM TRIANGLES;
+--Top Earners
+--https://www.hackerrank.com/challenges/earnings-of-employees/problem?isFullScreen=true
+SELECT (salary*months) s, count(*)  FROM Employee GROUP BY s HAVING s=(SELECT max(salary*months)  FROM Employee) ;
