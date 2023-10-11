@@ -5,6 +5,10 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ *https://www.hackerrank.com/challenges/cut-the-sticks/problem?isFullScreen=true
+ * Cut the sticks
+ * */
 public class CutTheSticks {
     public static void main(String[] args) {
 
