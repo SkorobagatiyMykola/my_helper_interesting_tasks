@@ -15,3 +15,10 @@ var compose = function(functions) {
         return functions.reduceRight((y,fn)=>  fn(y),x)
     }
 };
+//https://leetcode.com/problems/array-reduce-transformation/?envType=study-plan-v2&envId=30-days-of-javascript
+//2626. Array Reduce Transformation
+var reduce = function(nums, fn, init) {
+    nums.forEach(function(el){init=fn(init,el)});
+
+    return init;
+};
