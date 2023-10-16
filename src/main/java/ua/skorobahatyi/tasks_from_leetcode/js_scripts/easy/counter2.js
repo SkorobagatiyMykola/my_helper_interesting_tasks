@@ -18,6 +18,8 @@ var createCounter = function(init) {
 };
 
 /**
+
+
  * const counter = createCounter(5)
  * counter.increment(); // 6
  * counter.reset(); // 5
