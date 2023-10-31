@@ -2,7 +2,7 @@ package ua.skorobahatyi.help_for_numbers;
 
 import java.math.BigDecimal;
 
-public class TestBigDecimal {
+public class CheckBigDecimal {
 
     public static void main(String[] args) {
         System.out.println("==============================");
