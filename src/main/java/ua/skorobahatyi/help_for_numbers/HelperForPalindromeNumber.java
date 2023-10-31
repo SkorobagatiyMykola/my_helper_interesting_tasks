@@ -1,5 +1,9 @@
 package ua.skorobahatyi.help_for_numbers;
 
+/**
+ *  Polindrome
+ *
+ * */
 public class HelperForPalindromeNumber {
 
     public boolean isPalindrome(long number) {
