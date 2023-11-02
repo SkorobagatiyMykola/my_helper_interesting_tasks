@@ -117,3 +117,9 @@ SELECT class FROM Courses GROUP BY class HAVING COUNT(*)>=5
 --1633. Percentage of Users Attended a Contest
 --https://leetcode.com/problems/percentage-of-users-attended-a-contest/description/?envType=study-plan-v2&envId=top-sql-50
 SELECT contest_id, ROUND(100*count(*)/(SELECT count(*) FROM Users),2) percentage FROM Register r GROUP BY contest_id ORDER BY percentage DESC, contest_id
+--175. Combine Two Tables
+--https://leetcode.com/problems/combine-two-tables/description/?lang=pythondata
+SELECT p.firstName, p.lastName, a.city, a.state FROM Person p LEFT JOIN Address a ON p.personId=a.personId;
+--181. Employees Earning More Than Their Managers
+--https://leetcode.com/problems/employees-earning-more-than-their-managers/description/?lang=pythondata
+SELECT e1.name Employee FROM Employee e1 WHERE managerId IS NOT NULL AND salary>(SELECT salary FROM Employee e2 WHERE e2.id=e1.managerId) ;
