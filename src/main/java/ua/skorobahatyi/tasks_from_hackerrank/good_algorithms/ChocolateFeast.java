@@ -1,4 +1,4 @@
-package ua.skorobahatyi.tasks_from_hackerrank.good_alg;
+package ua.skorobahatyi.tasks_from_hackerrank.good_algorithms;
 
 /**
  * Chocolate Feast
