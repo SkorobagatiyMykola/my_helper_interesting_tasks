@@ -6,6 +6,7 @@ public class ContainerWithMostWater {
         System.out.println(maxArea(arr));
     }
 
+    // Update
     private static int maxArea(int[] height) {
         int max = 0;
         int volumeWater = 0, maxVolumeOfWater=0;
