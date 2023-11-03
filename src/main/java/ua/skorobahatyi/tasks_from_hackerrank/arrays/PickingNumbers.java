@@ -5,6 +5,7 @@ import java.util.*;
 /**
  * Picking Numbers
  * https://www.hackerrank.com/challenges/picking-numbers/problem?isFullScreen=true
+ *
  */
 public class PickingNumbers {
     public static void main(String[] args) {
