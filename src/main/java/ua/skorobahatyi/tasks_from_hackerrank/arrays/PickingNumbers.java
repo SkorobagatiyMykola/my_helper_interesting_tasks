@@ -12,7 +12,17 @@ public class PickingNumbers {
         Integer[] arr1 = {4, 6, 5, 3, 3, 1};
         Integer[] arr2 = {1, 1, 2, 2, 4, 4, 5, 5, 5};
 
+
         List<Integer> list1 = Arrays.asList(arr1);
+
+        for (int i = 0; i < list1.size(); i++) {
+            list1.set(i,list1.get(i)+100);
+        }
+
+        for (Integer orange : list1) {
+            System.out.println(orange);
+        }
+
         List<Integer> list2 = Arrays.asList(arr2);
         System.out.println(pickingNumbers(list1));
         System.out.println(pickingNumbers(list2));
