@@ -4,7 +4,7 @@ import static java.lang.Math.*;
 
 public class CalculatePI {
     public static void main(String[] args) {
-        double[][] arr1= createArray(1_000_000_0);
+        double[][] arr1= createArray(1_000);
         System.out.println(calculatePI(arr1));
         System.out.println(calculatePI2(arr1));
 
@@ -16,7 +16,7 @@ public class CalculatePI {
 
         for (int i = 0; i < array.length; i++) {
 
-            if (pow(array[i][0],2) + pow(array[i][1],2) <= 1d) {
+            if (pow(array[i][0],2) + pow(array[i][1],2) <= 1) {
                 sum++;
             }
         }
