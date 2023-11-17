@@ -4,7 +4,7 @@ package ua.skorobahatyi.help_for_numbers;
  *  Polindrome
  *
  * */
-public class HelperForPalindromeNumber {
+public class PalindromeNumber {
 
     public boolean isPalindrome(long number) {
 

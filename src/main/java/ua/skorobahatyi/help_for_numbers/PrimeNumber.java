@@ -3,7 +3,7 @@ package ua.skorobahatyi.help_for_numbers;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HelperForPrimeNumber {
+public class PrimeNumber {
 
     public boolean isPrimeNumber(int number) {
         int div = (int) Math.sqrt(number);

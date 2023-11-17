@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class HelperForPalindromeNumberTest {
 
-    HelperForPalindromeNumber helper = new HelperForPalindromeNumber();
+    PalindromeNumber helper = new PalindromeNumber();
 
     @DisplayName("Palindromes is true")
     @ParameterizedTest(name = "Check palindrome number => TRUE")

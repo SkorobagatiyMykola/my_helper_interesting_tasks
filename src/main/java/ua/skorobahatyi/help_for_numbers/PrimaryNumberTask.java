@@ -9,7 +9,7 @@ import java.util.List;
  * Find the largest palindrome which is product of two 5-digit prime numbers.
  */
 
-public class PrimaryNumber {
+public class PrimaryNumberTask {
 
     private static int[] arrayPrimaryNumberForCheck = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59,
             61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167, 173,
@@ -19,7 +19,7 @@ public class PrimaryNumber {
 
     public static void main(String[] args) {
         System.out.println("Solution of the problem:");
-        HelperForPrimeNumber helperPrimeNum = new HelperForPrimeNumber();
+        PrimeNumber helperPrimeNum = new PrimeNumber();
 
 
         List<Integer> list_5digitPrimeNum = new ArrayList<>();
@@ -30,7 +30,7 @@ public class PrimaryNumber {
             }
         }
 
-        HelperForPalindromeNumber helperPalindrome = new HelperForPalindromeNumber();
+        PalindromeNumber helperPalindrome = new PalindromeNumber();
         long maxPalindrome = 0;
         int factor1 = 0;
         int factor2 = 0;
