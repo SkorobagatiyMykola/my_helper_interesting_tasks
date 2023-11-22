@@ -6,12 +6,14 @@ package ua.skorobahatyi.tasks_from_hackerrank.good_algorithms.easy;
 public class LeonardosPrimeFactors {
 
     public static void main(String[] args) {
-        System.out.println(primeCount(1));
-        System.out.println(primeCount(2));
-        System.out.println(primeCount(3));
-        System.out.println(primeCount(500));
-        System.out.println(primeCount(5000));
-        System.out.println(primeCount(10000000000l));
+        Car c = new Car();
+
+//        System.out.println(primeCount(1));
+//        System.out.println(primeCount(2));
+//        System.out.println(primeCount(3));
+//        System.out.println(primeCount(500));
+//        System.out.println(primeCount(5000));
+//        System.out.println(primeCount(10000000000l));
     }
 
     private static int primeCount(long n) {
@@ -27,5 +29,20 @@ public class LeonardosPrimeFactors {
         }
 
         return count;
+    }
+
+    public static class Car{
+        public void printTopSpeed(){
+            System.out.println("Top speed of the vechicle is 100 kmph");
+        }
+
+        public void printTopSpeed(int topSpeed){
+            System.out.println("Top speed of the vechicle is "+topSpeed +"kmph");
+        }
+
+        public void printTopSpeed(String vehicle,int topSpeed){
+            System.out.println("Top speed of the vechicle "+vehicle +" is "+ topSpeed+" kmph");
+        }
+
     }
 }
