@@ -5,6 +5,11 @@ import java.util.List;
 
 public class PrimeNumber {
 
+    public static void main(String[] args) {
+        PrimeNumber primeNumber = new PrimeNumber();
+        System.out.println(primeNumber.isPrimeNumber(1234567));
+    }
+
     public boolean isPrimeNumber(int number) {
         int div = (int) Math.sqrt(number);
         int count = 0;
