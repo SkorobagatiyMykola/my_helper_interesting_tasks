@@ -15,6 +15,7 @@
         <jupiter.version>5.9.2</jupiter.version>
         <lombok.version>1.18.26</lombok.version>
         <jackson-databind.version>2.15.3</jackson-databind.version>
+        <gson.version>2.10.1</gson.version>
     </properties>
 
     <dependencies>
@@ -44,6 +45,13 @@
             <artifactId>jackson-databind</artifactId>
             <version>${jackson-databind.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>${gson.version}</version>
+        </dependency>
+
 
     </dependencies>
 
