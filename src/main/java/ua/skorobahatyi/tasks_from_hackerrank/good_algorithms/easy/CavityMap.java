@@ -8,6 +8,7 @@ import java.util.List;
  */
 public class CavityMap {
     public static void main(String[] args) {
+        System.out.println(0%3);
 
         List<String> list1 = new ArrayList<>(List.of("989", "191", "111"));
         List<String> list2 = new ArrayList<>(List.of("1112", "1912", "1892", "1234"));
