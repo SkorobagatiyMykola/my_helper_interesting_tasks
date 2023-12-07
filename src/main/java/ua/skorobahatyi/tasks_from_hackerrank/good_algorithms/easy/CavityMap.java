@@ -12,6 +12,7 @@ public class CavityMap {
 
         List<String> list1 = new ArrayList<>(List.of("989", "191", "111"));
         List<String> list2 = new ArrayList<>(List.of("1112", "1912", "1892", "1234"));
+
         cavityMap(list1);
         cavityMap(list2);
 
