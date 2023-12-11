@@ -4,4 +4,10 @@ public class DrawingBook {
     public static void main(String[] args) {
 
     }
+
+    private static int pageCount(int n, int p) {
+        // Write your code here
+
+        return 0;
+    }
 }
