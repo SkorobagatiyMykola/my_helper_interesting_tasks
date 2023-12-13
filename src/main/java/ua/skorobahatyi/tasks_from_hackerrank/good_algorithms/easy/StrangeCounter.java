@@ -21,10 +21,7 @@ public class StrangeCounter {
         }
         //System.out.println(t + " - " + sum + " ---- " + k);
         System.out.println( sum-t+1);
-        //long xx=
-        //  System.out.println(z + 1 - (t - (Math.pow(2, k) - 1) * 3));
-        //System.out.println(t - (Math.pow(2,k)-1)*3);
-        // System.out.println(t + " - " + (z-t));
+
 
         return sum-t+1;
     }
