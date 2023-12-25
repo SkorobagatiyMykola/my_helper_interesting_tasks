@@ -8,7 +8,7 @@ public class FlatlandSpaceStations {
         int[] arr1 = {0, 4};
         int[] arr2 = {0, 1, 2, 3, 4, 5};
         int[] arr3 = {0, 3, 5};
-        int[] arr4 = { 7};
+        int[] arr4 = {7};
 
 //        System.out.println(flatlandSpaceStations(5, arr1));
 //        System.out.println(flatlandSpaceStations(6, arr2));
@@ -34,6 +34,27 @@ public class FlatlandSpaceStations {
             }
         }
 
-        return  max==0 ? 0 : (max % 2 == 0 ? max / 2 : max / 2 + 1);
+        int maxFirst = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == 0) {
+                maxFirst++;
+            } else {
+                break;
+            }
+        }
+
+        int maxLast = 0;
+        for (int i = arr.length - 1; i >= 0; i--) {
+            if (arr[i] == 0) {
+                maxLast++;
+            } else {
+                break;
+            }
+        }
+
+        int max1 = maxFirst > maxLast ? maxFirst : maxLast;
+        int max2 = max == 0 ? 0 : (max % 2 == 0 ? max / 2 : max / 2 + 1);
+
+        return max1> max2 ? max1 : max2;
     }
 }
