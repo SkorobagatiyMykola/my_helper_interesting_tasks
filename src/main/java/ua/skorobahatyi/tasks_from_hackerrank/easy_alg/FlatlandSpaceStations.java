@@ -10,8 +10,8 @@ public class FlatlandSpaceStations {
         int[] arr3 = {0, 3, 5};
         int[] arr4 = {7};
 
-//        System.out.println(flatlandSpaceStations(5, arr1));
-//        System.out.println(flatlandSpaceStations(6, arr2));
+        System.out.println(flatlandSpaceStations(5, arr1));
+        System.out.println(flatlandSpaceStations(6, arr2));
         System.out.println(flatlandSpaceStations(6, arr3));
         System.out.println(flatlandSpaceStations(10, arr4));
     }
