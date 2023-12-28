@@ -32,7 +32,6 @@ public class LeftRotation {
             } else {
                 ind = step + i;
             }
-            //System.out.println(i);
             result.add(arr.get(ind));
 
         }
