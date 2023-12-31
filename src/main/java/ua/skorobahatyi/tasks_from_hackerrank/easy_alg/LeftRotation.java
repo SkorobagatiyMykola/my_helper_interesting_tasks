@@ -14,7 +14,7 @@ public class LeftRotation {
         List<Integer> res1 = rotateLeft(2, list1);
         List<Integer> res2 = rotateLeft(4, list1);
 
-        System.out.println(res1);
+      //  System.out.println(res1);
         System.out.println(res2);
     }
 
