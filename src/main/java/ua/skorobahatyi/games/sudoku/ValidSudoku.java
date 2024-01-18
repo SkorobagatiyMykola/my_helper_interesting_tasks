@@ -103,9 +103,41 @@ public class ValidSudoku {
             }
         }
 
+        // check center square 3*3
+       // System.out.println("========================");
+        for (int i = 1; i < board.length; i+=3) {
+            for (int j = 1; j < board[i].length; j+=3) {
+                Set<Integer> set = new HashSet<>();
+                for (int k = i-1; k <=i+1 ; k++) {
+                    for (int l = j-1; l <=j+1 ; l++) {
+                        if (board[k][l] != 0) {
+                            if (set.contains(board[k][l]))
+                                return false;
+                            else
+                                set.add(board[k][l]);
+                        }
+                    }
+                }
+            }
+        }
+
+        /**/
 
         return true;
     }
 
 
 }
+
+
+/*
+*
+
+                //System.out.print(board[i][j] +" ");
+                //System.out.print(i+","+j+" ");
+                /*if (board[i][j] != 0) {
+                    if (set.contains(board[i][j]))
+                        return false;
+                    else
+                        set.add(board[i][j]);
+                }*/
