@@ -1,5 +1,9 @@
 package ua.skorobahatyi.games.sudoku;
 
+/**
+ *https://leetcode.com/problems/valid-sudoku/description/
+ *
+ * */
 public class ValidSudoku {
     private static final int SIZE=9;
     private static final int INDEX_ANSI_DIGIT=48;
