@@ -2,6 +2,7 @@ package ua.skorobahatyi.design_patterns.creational_patterns.builder;
 
 /**
  * Created template on 07/03/2024
+ * by Skorobahatyi Mykola
  * */
 public class UserBuilder {
     private String name;
