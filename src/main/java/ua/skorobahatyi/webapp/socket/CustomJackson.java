@@ -19,6 +19,15 @@ public class CustomJackson {
         var user = jsonToObjMy(json, User.class);
         System.out.println(user);
 
+
+        var jsonPet = "{\n" +
+                "  \"name\": \"Snow\",\n" +
+                "  \"owner\": \"Skorobahatyi\",\n" +
+                "  \"age\": \"1\"\n" +
+                "}";
+        var pet = jsonToObjMy(jsonPet, Pet.class);
+        System.out.println(pet);
+
     }
 
     @SneakyThrows
@@ -32,7 +41,7 @@ public class CustomJackson {
 
         for (String element : elements) {
             String[] pairs = element.split(":");
-            System.out.println(pairs[0] + "  -  " + pairs[1]);
+            // System.out.println(pairs[0] + "  -  " + pairs[1]);
             map.put(pairs[0], pairs[1]);
         }
 
@@ -41,23 +50,23 @@ public class CustomJackson {
 
         for (String key : map.keySet()) {
             try {
-                System.out.println(key.equals("email") + "---" + key);
                 Field field = instance.getClass().getDeclaredField(key);
                 field.setAccessible(true);
                 field.set(instance, map.get(key));
             } catch (NoSuchFieldException ex) {
                 continue;
             }
-
-
         }
 
 //        for (Field field:fields) {
 //            System.out.println(field.toString());
 //        }
-
-
         return instance;
+    }
+
+    @SneakyThrows
+    private static <T> T jsonToObj(String json, Class<T> userClass) {
+        return null;
     }
 
     @Data
@@ -65,6 +74,14 @@ public class CustomJackson {
         private String firstName;
         private String lastName;
         private String email;
+        private String city;
+    }
 
+    @Data
+    static class Pet {
+        private String name;
+        private String owner;
+        private String age;
+        private String city;
     }
 }
