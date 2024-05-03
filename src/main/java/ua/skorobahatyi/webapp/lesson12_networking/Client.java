@@ -1,4 +1,4 @@
-package ua.skorobahatyi.webapp.socket;
+package ua.skorobahatyi.webapp.lesson12_networking;
 
 import lombok.SneakyThrows;
 
