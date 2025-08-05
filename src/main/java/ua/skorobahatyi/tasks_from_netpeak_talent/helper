@@ -1,0 +1,58 @@
+ public TransactionUpdateStatusResponseDTO updateTransactionStatusById(Long id, TransactionStatus newTransactionStatus) throws NotSuchTransactionException {
+        var transactionEntity = transactionRepository.findById(id)
+                .orElseThrow(() -> new NotSuchTransactionException(id));
+
+        var trxStatus = transactionEntity.getStatus();
+
+        TransactionUpdateStatusResponseDTO response;
+        if (trxStatus.isFinal() || trxStatus.equals(newTransactionStatus) ||
+                newTransactionStatus.equals(TransactionStatus.NEW)) {
+            response = TransactionUpdateStatusResponseDTO.builder()
+                    .transactionId(id)
+                    .massage("Transaction status did not change")
+                    .oldTransactionStatus(trxStatus)
+                    .build();
+        } else {
+            log.info("===================: " + newTransactionStatus);
+            transactionRepository.updateTransactionStatus(id, newTransactionStatus.name());
+            /*transactionEntity.setStatus(newTransactionStatus);
+            transactionEntity.setUpdatedAt(LocalDateTime.now());
+            transactionRepository.save(transactionEntity);*/
+            response = TransactionUpdateStatusResponseDTO.builder()
+                    .transactionId(id)
+                    .massage("Transaction status successfully changed")
+                    .newTransactionStatus(newTransactionStatus)
+                    .build();
+        }
+
+===========================================================
+@Override
+    public TransactionUpdateStatusResponseDTO updateTransactionStatusById(Long id, TransactionStatus newTransactionStatus) throws NotSuchTransactionException {
+        var transactionEntity = transactionRepository.findById(id)
+                .orElseThrow(() -> new NotSuchTransactionException(id));
+
+        var trxStatus = transactionEntity.getStatus();
+
+        TransactionUpdateStatusResponseDTO response;
+
+        if (trxStatus.isFinal() || trxStatus.equals(newTransactionStatus) || newTransactionStatus.equals(TransactionStatus.NEW)) {
+            log.info("Transaction status did not change.");
+            response = TransactionUpdateStatusResponseDTO.builder()
+                    .transactionId(id)
+                    .massage("Transaction status did not change.")
+                    .oldTransactionStatus(trxStatus)
+                    .build();
+        } else {
+            log.info("Transaction status successfully changed, new status: " + newTransactionStatus);
+            transactionRepository.updateTransactionStatus(id, newTransactionStatus.name());
+            response = TransactionUpdateStatusResponseDTO.builder()
+                    .transactionId(id)
+                    .massage("Transaction status successfully changed.")
+                    .newTransactionStatus(newTransactionStatus)
+                    .build();
+        }
+
+        return response;
+    }
+
+===========================================================
