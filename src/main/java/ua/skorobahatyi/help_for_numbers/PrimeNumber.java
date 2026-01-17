@@ -7,7 +7,9 @@ public class PrimeNumber {
 
     public static void main(String[] args) {
         PrimeNumber primeNumber = new PrimeNumber();
-        System.out.println(primeNumber.isPrimeNumber(1234567));
+        System.out.println(primeNumber.isPrimeNumber(2021));
+
+        System.out.println(2021/43);
     }
 
     public boolean isPrimeNumber(int number) {
@@ -17,8 +19,10 @@ public class PrimeNumber {
             return false;
 
         for (int i = 1; i <= div; i++) {
-            if (number % i == 0)
+            if (number % i == 0){
                 count++;
+                System.out.println("Div: "+i);
+            }
             if (count > 1)
                 return false;
         }
