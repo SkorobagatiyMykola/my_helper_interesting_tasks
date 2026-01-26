@@ -19,6 +19,6 @@ public class TestDocker {
 
         }
 
-        System.out.println("Skorobagatyi Mykola");
+        System.out.println("Skorobagatyi Mykola  ");
     }
 }
