@@ -5,7 +5,7 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("=======  Testing ============");
+        System.out.println("=======  Testing =========== =");
         TransactionStatus[] status = TransactionStatus.values();
         TransactionStatus2[] status2 = TransactionStatus2.values();
 
