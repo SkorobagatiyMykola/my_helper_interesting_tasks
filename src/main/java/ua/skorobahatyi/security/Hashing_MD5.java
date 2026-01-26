@@ -12,7 +12,7 @@ public class Hashing_MD5 {
     public static void main(String[] args) throws NoSuchAlgorithmException {
         MessageDigest messageDigest = MessageDigest.getInstance("MD5");
         //String pass1 = "qwerty123";
-        String pass1 = "hello_world";
+        String pass1 = "hello_world ";
         byte[] bytes = messageDigest.digest(pass1.getBytes());
 
         for (byte b:bytes) {
