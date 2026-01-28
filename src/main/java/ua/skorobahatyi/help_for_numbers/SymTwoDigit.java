@@ -10,7 +10,7 @@ public class SymTwoDigit {
 
     public static void main(String[] args) {
         System.out.println(" ");
-        //checkSolution();
+        checkSolution2();
 
         for (int i = from; i <= to; i++) {
             int sumTest = sumDigit(i);
@@ -21,7 +21,7 @@ public class SymTwoDigit {
                 if (sumDigit(i * j) != sumTest)
                     break;
                 if (j == 9)
-                    System.out.println(i);
+                    System.out.print(i+" ");
             }
         }
     }
@@ -35,10 +35,13 @@ public class SymTwoDigit {
     }
 
     private static void checkSolution2() {
-        int[] arr = {123, 2345, 34, 67, 5444, 100, 600};
+        int[] arr = {18, 45, 90, 99};
 
         for (int num : arr) {
-            System.out.println(num + ", sum digit:" + sumDigit(num));
+            for (int i = 1; i <10 ; i++) {
+                System.out.print(num*i+"\t");
+            }
+            System.out.println();
         }
     }
 
