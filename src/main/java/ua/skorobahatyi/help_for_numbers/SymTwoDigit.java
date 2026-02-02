@@ -5,7 +5,7 @@ package ua.skorobahatyi.help_for_numbers;
  * Знайдіть двозначне число, сума цифр якого не змінюється при множенні на будь-яке однозначне число.
  */
 public class SymTwoDigit {
-    private static final int from = 10;
+    private static final int from = 11;
     private static final int to = 99;
 
     public static void main(String[] args) {
