@@ -2,6 +2,9 @@ package ua.skorobahatyi.help_for_numbers;
 
 import static java.lang.Math.*;
 
+/**
+ * Calculate Pi
+ * */
 public class CalculatePI {
     public static void main(String[] args) {
         double[][] arr1= createArray(1_000);
