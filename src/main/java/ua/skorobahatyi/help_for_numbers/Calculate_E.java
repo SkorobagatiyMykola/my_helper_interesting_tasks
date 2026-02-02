@@ -1,5 +1,9 @@
 package ua.skorobahatyi.help_for_numbers;
 
+/**
+ * Calculate E
+ * */
+ */
 public class Calculate_E {
     public static void main(String[] args) {
         System.out.println(calculate_E_v1(1));
