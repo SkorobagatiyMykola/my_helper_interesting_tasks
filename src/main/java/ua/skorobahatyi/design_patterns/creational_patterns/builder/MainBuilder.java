@@ -3,6 +3,7 @@ package ua.skorobahatyi.design_patterns.creational_patterns.builder;
 public class MainBuilder {
     public static void main(String[] args) {
 
+
         UserBuilder user1= UserBuilder.newBuilder()
                 .setName("Nick")
                 .setSurname("Skoronahatiy")
