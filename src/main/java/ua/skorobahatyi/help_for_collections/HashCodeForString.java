@@ -6,7 +6,7 @@ public class HashCodeForString {
     public static void main(String[] args) {
         //iterateAll_1_Digit_Values();
         //iterateAll_2_Digit_Values();
-       // iterateAll_3_Digit_Values();
+        iterateAll_3_Digit_Values();
         iterateAll_4_Digit_Values();
        // iterateAll_5_Digit_Values();
         /*iterateAll_6_Digit_Values();*/
