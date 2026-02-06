@@ -1,7 +1,7 @@
 CREATE TABLE IF NOT EXISTS specialties
 (
     id   SERIAL PRIMARY KEY,
-    name1 VARCHAR(100)
+    name VARCHAR(100)
 );
 
 
@@ -48,4 +48,54 @@ INSERT INTO tasks (title, story_points, developer_id, created_at) VALUES ('TASK 
 INSERT INTO tasks (title, story_points, developer_id, created_at) VALUES ('TASK 7', 1, 5, '2023-05-01');
 
 
+
+
 select * from tasks;
+
+SELECT d.id,
+       COUNT(t.id)         AS total_tasks_amount,
+       SUM(t.story_points) AS total_story_points
+FROM developers d
+         JOIN tasks t on d.id = t.developer_id
+         JOIN specialties s on s.id = d.specialty_id
+WHERE EXTRACT(MONTH FROM created_at) = 1
+GROUP BY (d.id)
+HAVING SUM(t.story_points) < 5
+ORDER BY d.last_name;
+
+
+
+explain SELECT d.id,
+       COUNT(t.id)         AS total_tasks_amount,
+       SUM(t.story_points) AS total_story_points
+FROM developers d
+         JOIN tasks t on d.id = t.developer_id
+         JOIN specialties s on s.id = d.specialty_id
+WHERE EXTRACT(MONTH FROM created_at) = 1
+GROUP BY (d.id)
+HAVING SUM(t.story_points) < 5
+ORDER BY d.last_name;
+--- dbfbsdb
+
+explain analyze SELECT d.id,
+       COUNT(t.id)         AS total_tasks_amount,
+       SUM(t.story_points) AS total_story_points
+FROM developers d
+         JOIN tasks t on d.id = t.developer_id
+         JOIN specialties s on s.id = d.specialty_id
+WHERE EXTRACT(MONTH FROM created_at) = 1
+GROUP BY (d.id)
+HAVING SUM(t.story_points) < 5
+ORDER BY d.last_name;
+
+EXPLAIN (ANALYZE, BUFFERS, VERBOSE)
+SELECT d.id,
+       COUNT(t.id)         AS total_tasks_amount,
+       SUM(t.story_points) AS total_story_points
+FROM developers d
+         JOIN tasks t on d.id = t.developer_id
+         JOIN specialties s on s.id = d.specialty_id
+WHERE EXTRACT(MONTH FROM created_at) = 1
+GROUP BY (d.id)
+HAVING SUM(t.story_points) < 5
+ORDER BY d.last_name;
