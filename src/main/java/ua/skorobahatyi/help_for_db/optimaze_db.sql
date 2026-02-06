@@ -1,4 +1,4 @@
-create table if not exist specialties(
-id serial primary key,
-name varchar(100)
+CREATE TABLE IF NOT EXISTS specialties(
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100)
 );
