@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class Test1 {
     public static void main(String[] args) {
 
-        var dd = Arrays.asList("dsd","dad");
+        var dd = Arrays.asList("dsd ","dad");
 
         String[] arr1 = {"P@sswORD1","20passWORD20","PASS6word"};
         String check1="4dro6";
