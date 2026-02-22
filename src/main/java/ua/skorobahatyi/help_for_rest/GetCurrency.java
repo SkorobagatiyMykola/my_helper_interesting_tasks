@@ -11,6 +11,7 @@ public class GetCurrency {
     public static void main(String[] args) throws URISyntaxException, IOException, InterruptedException {
         //HttpClient client =HttpClient.newHttpClient();
         String url= "https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?valcode=usd&json";
+
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(new URI(url))
                 //.uri(new URI("https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json"))
