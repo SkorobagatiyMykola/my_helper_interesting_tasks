@@ -7,6 +7,7 @@ public class CheckKnowledge {
         i.wait();
         boolean d ;
 
+
         //i.
         //Exception e = new Exception();
     }
