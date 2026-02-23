@@ -7,6 +7,7 @@ public class CompareCreationString {
     public static void main(String[] args) {
 
         long startTest1 = System.currentTimeMillis();
+
         for (int i = 0; i < COUNT; i++) {
             String s1 = new String(String.valueOf(i));
         }
