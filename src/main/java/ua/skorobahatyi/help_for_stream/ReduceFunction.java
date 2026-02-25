@@ -37,6 +37,5 @@ public class ReduceFunction {
         System.out.println(maxAge2);
         System.out.println(minAge2);
 
-
     }
 }
