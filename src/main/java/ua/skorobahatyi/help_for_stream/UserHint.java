@@ -31,8 +31,6 @@ public class UserHint {
             userHintList.add(new UserHint(3,"Petrov","Petrov",hobby3));
 
 
-
-
             return userHintList;
         }
     }
