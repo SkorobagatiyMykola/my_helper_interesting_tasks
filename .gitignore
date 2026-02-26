@@ -1,2 +1,4 @@
 # Project exclude paths
 /target/
+# I added this line
+/*.txt
