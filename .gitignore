@@ -2,3 +2,4 @@
 /target/
 # I added this line
 /*.txt
+/.idea
