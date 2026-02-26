@@ -1,5 +1,5 @@
 # Project exclude paths
 /target/
-# I added this line
+# I added this two lines
 /*.txt
 /.idea
