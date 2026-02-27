@@ -1,7 +1,6 @@
 package ua.skorobahatyi.design_patterns.structural_patterns.decorator;
 
 public class DeveloperDecorator implements Developer{
-
     Developer developer;
 
     public DeveloperDecorator(Developer developer) {
