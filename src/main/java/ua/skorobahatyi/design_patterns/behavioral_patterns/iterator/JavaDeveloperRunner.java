@@ -8,7 +8,12 @@ public class JavaDeveloperRunner {
         JavaDeveloper javaDeveloper = new JavaDeveloper("Mykola Skorobagatyi",skills);
         Iterator iterator = javaDeveloper.getIterator();
 
-        System.out.println("@");
+        System.out.println("Developer: "+javaDeveloper.getName());
+        System.out.println("Skills: ");
+
+        while (iterator.hasNext()){
+            System.out.print(iterator.next()+" ");
+        }
 
     }
 }
