@@ -21,3 +21,5 @@
 ======================================================================================
 (!): https://refactoring.guru/uk/design-patterns/state
 https://www.youtube.com/watch?v=gpY98f7A_8M&list=PLlsMRoVt5sTPgGbinwOVnaF1mxNeLAD7P&index=26
+
+(!) Змінюється в класі через if
