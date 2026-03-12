@@ -24,3 +24,5 @@
 ======================================================================================
 (!): https://refactoring.guru/uk/design-patterns/strategy
 https://www.youtube.com/watch?v=rsB2exGsR4I&list=PLlsMRoVt5sTPgGbinwOVnaF1mxNeLAD7P&index=27
+
+(!) Стратегія змінюється в клієнтському коді
