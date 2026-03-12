@@ -6,7 +6,6 @@ public class Developer {
     public void setActivity(Activity activity) {
         this.activity = activity;
     }
-
     public void changeActivity() {
         if (activity instanceof Sleeping) {
             setActivity(new Training());
