@@ -1,0 +1,8 @@
+package ua.skorobahatyi.design_patterns.behavioral_patterns.template_method;
+
+public class NewsPageTemplate extends WebsiteTemplate{
+    @Override
+    public void showPageComtent() {
+        System.out.println("News Template");
+    }
+}
