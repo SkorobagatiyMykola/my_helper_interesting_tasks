@@ -9,6 +9,7 @@ public class WebsiteRunnerTemplate {
 
         newsPageTemplate.showPage();
 
+
         System.out.println("\n=====================================\n");
 
         welcomePageTemplate.showPage();
