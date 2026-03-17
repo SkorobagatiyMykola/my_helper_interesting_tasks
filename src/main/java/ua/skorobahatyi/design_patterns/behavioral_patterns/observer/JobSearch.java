@@ -10,12 +10,15 @@ public class JobSearch {
 
         System.out.println("---------------------");
         Observer firstSubscriber = new Subscriber("Nick");
-        //Observer secondSubscriber = new Subscriber("Pasha");
+        Observer secondSubscriber = new Subscriber("Pasha");
         jobSite.addObserver(firstSubscriber);
         //jobSite.addObserver(secondSubscriber);
 
         jobSite.addVacancy(" 4 java vacancy");
 
         jobSite.removeVacancy("Second Job");
+        jobSite.addObserver(secondSubscriber);
+        jobSite.addVacancy("Java Team Lead");
+
     }
 }
