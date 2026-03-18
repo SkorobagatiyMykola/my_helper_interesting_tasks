@@ -5,7 +5,7 @@ public class Milk extends CondimentDecorator{
 
     public Milk(Beverage beverage) {
         this.beverage = beverage;
-        //this.beverage.setDescription(beverage.getDescription()+", Milk");
+        //this.beverage.setDescription(bevrage.getDescription()+", Milk");
     }
 
     @Override
