@@ -1,4 +1,4 @@
-package ua.skorobahatyi.epam_2026.tests;
+package ua.skorobahatyi.epam_2026.module_01.tests;
 
 public class User {
     private String name;
