@@ -1,11 +1,11 @@
-package ua.skorobahatyi.epam_2026.module_02.dead_lock;
+package ua.skorobahatyi.epam_2026.module_02.starvation;
 
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class Philosopher extends Thread {
     private Lock firstChop, secondChop;
-    private static int sushiCount = 100_000; // increase from 5 to 100_000
+    private static int sushiCount = 500_000; // increase from 5 to 100_000
 
     public Philosopher(String name, Lock firstChop, Lock secondChop) {
         super(name);
@@ -15,18 +15,21 @@ public class Philosopher extends Thread {
 
     @Override
     public void run() {
+        int sushiEaten=0;
         while (sushiCount > 0) {
             firstChop.lock();
             secondChop.lock();
 
             if (sushiCount > 0) {
                 sushiCount--;
+                sushiEaten++;
                 System.out.println(this.getName() + " took a piece! Sushi remaiimg: " + sushiCount);
             }
 
             secondChop.unlock();
             firstChop.unlock();
         }
+        System.out.println(this.getName()+" took "+sushiEaten);
     }
 }
 
@@ -37,8 +40,8 @@ class DeadLockDemo {
         Lock chopstickC = new ReentrantLock();
 
         new Philosopher("Nick", chopstickA, chopstickB).start();
-        new Philosopher("Olga", chopstickB, chopstickC).start();
-        new Philosopher("Pavlo", chopstickC, chopstickA).start(); //fixme deadlock
-        //new Philosopher("Pavlo", chopstickA, chopstickC).start();
+        new Philosopher("Olga", chopstickA, chopstickB).start(); // very greedy
+        //new Philosopher("Olga", chopstickB, chopstickC).start(); // very greedy
+        new Philosopher("Pavlo", chopstickA, chopstickC).start();
     }
 }
