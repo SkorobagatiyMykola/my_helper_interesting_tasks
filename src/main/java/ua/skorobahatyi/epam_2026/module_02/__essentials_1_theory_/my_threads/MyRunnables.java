@@ -1,4 +1,4 @@
-package ua.skorobahatyi.epam_2026.module_02.my_threads;
+package ua.skorobahatyi.epam_2026.module_02.__essentials_1_theory_.my_threads;
 
 public class MyRunnables {
     public static void main(String[] args) {

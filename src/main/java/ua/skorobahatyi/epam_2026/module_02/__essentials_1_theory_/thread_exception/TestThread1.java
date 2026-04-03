@@ -1,4 +1,4 @@
-package ua.skorobahatyi.epam_2026.module_02.thread_exception;
+package ua.skorobahatyi.epam_2026.module_02.__essentials_1_theory_.thread_exception;
 
 public class TestThread1 extends Thread{
     String name;

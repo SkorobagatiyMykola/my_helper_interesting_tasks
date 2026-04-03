@@ -1,4 +1,4 @@
-package ua.skorobahatyi.epam_2026.module_02.dead_lock;
+package ua.skorobahatyi.epam_2026.module_02.__essentials_1_theory_.dead_lock;
 
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;

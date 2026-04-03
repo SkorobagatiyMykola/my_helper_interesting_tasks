@@ -1,4 +1,4 @@
-package ua.skorobahatyi.epam_2026.module_02;
+package ua.skorobahatyi.epam_2026.module_02.__essentials_1_theory_;
 
 import static java.lang.Thread.sleep;
 

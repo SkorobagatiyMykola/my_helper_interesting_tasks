@@ -1,4 +1,4 @@
-package ua.skorobahatyi.epam_2026.module_02.starvation;
+package ua.skorobahatyi.epam_2026.module_02.__essentials_1_theory_.starvation;
 
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;

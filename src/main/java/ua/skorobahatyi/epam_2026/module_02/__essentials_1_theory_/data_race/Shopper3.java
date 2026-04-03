@@ -1,4 +1,4 @@
-package ua.skorobahatyi.epam_2026.module_02.data_race;
+package ua.skorobahatyi.epam_2026.module_02.__essentials_1_theory_.data_race;
 
 public class Shopper3 extends Thread {
 

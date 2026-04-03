@@ -1,4 +1,4 @@
-package ua.skorobahatyi.epam_2026.module_02.data_race;
+package ua.skorobahatyi.epam_2026.module_02.__essentials_1_theory_.data_race;
 
 import static java.lang.Thread.sleep;
 
@@ -20,7 +20,10 @@ public class MyDataRace {
         });
 
 
-        th1.start();
+        /*th1.start();
+        th1.start();*/
+        th1.run();
+        th1.run();
         th1.join();
 
         System.out.println(count);

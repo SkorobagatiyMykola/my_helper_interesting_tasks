@@ -1,4 +1,4 @@
-package ua.skorobahatyi.epam_2026.module_02.my_threads;
+package ua.skorobahatyi.epam_2026.module_02.__essentials_1_theory_.my_threads;
 
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.Lock;
