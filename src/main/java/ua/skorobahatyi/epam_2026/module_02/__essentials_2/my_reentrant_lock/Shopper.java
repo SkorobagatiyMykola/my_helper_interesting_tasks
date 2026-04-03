@@ -6,21 +6,42 @@ import java.util.concurrent.locks.ReentrantLock;
 public class Shopper extends Thread{
 
     static int garlicCount, potatoCount =0;
-    static Lock pencil = new ReentrantLock();
+    //static Lock pencil = new ReentrantLock();
+    static ReentrantLock pencil = new ReentrantLock(); // changed
 
     private void addGarlic(){
         pencil.lock();
+        System.out.println("Hold count: "+pencil.getHoldCount());
         garlicCount++;
         pencil.unlock();
     }
     private void addPotato(){
         pencil.lock();
         potatoCount++;
+        addGarlic(); // Added (*)
         pencil.unlock();
     }
 
     @Override
     public void run() {
-        super.run();
+        for (int i = 0; i < 10_000; i++) {
+            addGarlic();
+           // addPotato();
+        }
+    }
+}
+
+class ReentrantLockDemo{
+    public static void main(String[] args) throws InterruptedException {
+        Thread nick = new Shopper();
+        Thread olga = new Shopper();
+        nick.start();
+        olga.start();
+        nick.join();
+        olga.join();
+
+        System.out.println("We should buy "+Shopper.garlicCount+" garlic.");
+        System.out.println("We should buy "+Shopper.potatoCount+" potatoes.");
+
     }
 }
