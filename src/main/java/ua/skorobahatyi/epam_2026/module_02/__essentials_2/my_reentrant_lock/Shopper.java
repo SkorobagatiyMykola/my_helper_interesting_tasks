@@ -1,5 +1,7 @@
 package ua.skorobahatyi.epam_2026.module_02.__essentials_2.my_reentrant_lock;
 
+import lombok.SneakyThrows;
+
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -22,10 +24,12 @@ public class Shopper extends Thread{
         pencil.unlock();
     }
 
+    @SneakyThrows
     @Override
     public void run() {
         for (int i = 0; i < 10_000; i++) {
             addGarlic();
+            sleep(200);
            // addPotato();
         }
     }
