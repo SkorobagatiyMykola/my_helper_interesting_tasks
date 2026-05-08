@@ -509,3 +509,5 @@ INSERT INTO comments(text,score,article_id) VALUES('comment (id=2) text for 99',
 INSERT INTO comments(text,score,article_id) VALUES('comment (id=3) text for 99',11,99);
 INSERT INTO comments(text,score,article_id) VALUES('comment (id=4) text for 99',21,99);
 INSERT INTO comments(text,score,article_id) VALUES('comment (id=5) text for 99',27,99);
+
+-- Test2
