@@ -1,4 +1,5 @@
 ---- My Test
+-- new line
 
 INSERT INTO articles(title,text) VALUES('title 1','text 1');
 INSERT INTO articles(title,text) VALUES('title 2','text 2');
